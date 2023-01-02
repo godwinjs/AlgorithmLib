@@ -7,6 +7,7 @@
 
 // If the username is valid then your program should return the string true, otherwise return the string false.
 
+
 //solution1
 function CodelandUsernameValidation(str) { 
 
