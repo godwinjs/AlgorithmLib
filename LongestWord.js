@@ -9,10 +9,12 @@ Words may also contain numbers, for example "Hello world123 567"
 function LongestWord(sen) { 
 
     // code goes here
-    let arr = sen.split(' ');
-  
+    let arr = sen.split(' ').map((item) => item.replace(/[^a-zA-Z0-9]/g, ""))
+    //   a shorter regex that eliminates loop
+    //   var arr = sen.match(/[a-z]+/gi);
+
     arr.sort((a, b) => {
-      return b.replace(/[^a-zA-Z0-9]/g, "").length - a.replace(/[^a-zA-Z0-9]/g, "").length;
+      return b.length - a.length;
     })
   
     return arr[0];
@@ -20,3 +22,4 @@ function LongestWord(sen) {
   
   // keep this function call here 
   console.log(LongestWord(readline()));
+
