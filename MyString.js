@@ -3,6 +3,8 @@
             MyString(), that acts like String() as closely as possible. You're not allowed to
             use any built-in string methods or properties, and remember that the String()
             doesn't exist. You can use this code to test your constructor
+
+        5. Update your MyString() constructor to include a reverse() method.
     */
 
     class MyString {
@@ -106,4 +108,6 @@
     console.log(s.split('e'))
     console.log(s.split('l'))
     console.log(s.reverse())
-        
+/*
+
+*/
