@@ -1,5 +1,5 @@
 function HighestScoringWord(str) {
-  let scores = str.split(' ').map( word => word.split('').map( item => (item.charCodeAt(0) - 96) ).reduce( (a,b) => a+b,0) )
+  let scores = str.split(' ').map(word => word.split('').reduce((a,b) => a + (b.charCodeAt(0) - 96) ,0) )
   
 	return str.split(' ')[scores.indexOf(Math.max(...scores))]
 }
