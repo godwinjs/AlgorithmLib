@@ -1,4 +1,4 @@
-const NumberRange = (start: number, end: number ) => {
+const NumberRange = (start: number, end: number ): number[] => {
 	if(start === end){
   	return end // if you don't use the concat method you have to return [end] to suit your solution
   }
@@ -10,7 +10,7 @@ console.log( NumberRange(1, 10) ) //[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 // UNWINDING in Recursion
 
-const NumberRange = (start: number, end: number ) => {
+const NumberRange = (start: number, end: number ): number[] => {
 	if(start === end){
   	return [end]
   }
