@@ -1,6 +1,6 @@
 function Factorial (num: number): number {
 	if(num < 2){
-  	return num
+  	return 1
   }
 	
   return num * Factorial(num - 1)
