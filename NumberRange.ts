@@ -1,6 +1,6 @@
 const NumberRange = (start: number, end: number ) => {
 	if(start === end){
-  	return end
+  	return end // if you don't use the concat method you have to return [end] to suit your solution
   }
   
   return [ start ].concat(NumberRange(start + 1, end))
