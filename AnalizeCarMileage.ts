@@ -36,10 +36,10 @@ function AnalizeCarMileage(cars): MileageStats {
   mileage.totalMileage = cars.reduce((count, car) => {
     mileage.highestMileage = mileage.highestMileage < car.mileage ? mileage.highestMileage = car.mileage : mileage.highestMileage
     mileage.lowestMileage = mileage.lowestMileage > car.mileage ? mileage.lowestMileage = car.mileage : mileage.lowestMileage
-    return Math.round(count + car.mileage, 2);
+    return parseFloat( ((count + car.mileage, 2)).toFixed(2));
   }, 0)
   
-  mileage.averageMileage = Math.round(mileage.totalMileage / cars.length, 2) //constraints: 2 decimal place
+  mileage.averageMileage = parseFloat( (mileage.totalMileage / cars.length).toFixed(2)) //constraints: 2 decimal place
   
   return mileage
 }
