@@ -22,24 +22,20 @@ const cars: Car[] = [
 ]
 
 function AnalizeCarMileage(cars): MileageStats {
-  if(cars.length >100){
-    return 'Number of allowed cars to analyze is less is greater than the constraints'
-    }
-  
 	const mileage = {
   	averageMileage: 0,
-    highestMileage: 0,
-    lowestMileage: cars[0].mileage,
+    highestMileage: cars[0],
+    lowestMileage: cars[0],
     totalMileage: 0
   }
   
   mileage.totalMileage = cars.reduce((count, car) => {
-    mileage.highestMileage = mileage.highestMileage < car.mileage ? mileage.highestMileage = car.mileage : mileage.highestMileage
-    mileage.lowestMileage = mileage.lowestMileage > car.mileage ? mileage.lowestMileage = car.mileage : mileage.lowestMileage
-    return parseFloat( ((count + car.mileage, 2)).toFixed(2));
+    mileage.highestMileage = mileage.highestMileage.mileage < car.mileage ? mileage.highestMileage = car : mileage.highestMileage
+    mileage.lowestMileage = mileage.lowestMileage.mileage > car.mileage ? mileage.lowestMileage = car : mileage.lowestMileage
+    return count+ car.mileage;
   }, 0)
   
-  mileage.averageMileage = parseFloat( (mileage.totalMileage / cars.length).toFixed(2)) //constraints: 2 decimal place
+  mileage.averageMileage = parseFloat( (mileage.totalMileage / cars.length).toFixed(2))
   
   return mileage
 }
@@ -52,15 +48,17 @@ function analyzeCarMileage(cars: Car[]): MileageStats {
   if (cars.length === 0) {
     return {
       averageMileage: 0,
-      highestMileage: 0,
-      lowestMileage: 0,
+      highestMileage: null,
+      lowestMileage: null,
       totalMileage: 0,
     };
   }
 
   const totalMileage = cars.reduce((sum, car) => sum + car.mileage, 0);
-  const highestMileage = Math.max(...cars.map(car => car.mileage));
-  const lowestMileage = Math.min(...cars.map(car => car.mileage));
+  const highestMileage = cars.reduce((maxCar, car) => 
+    car.mileage > maxCar.mileage ? car : maxCar, cars[0]);
+  const lowestMileage = cars.reduce((minCar, car) => 
+    car.mileage < minCar.mileage ? car : minCar, cars[0]);
   const averageMileage = totalMileage / cars.length;
 
   return {
