@@ -27,7 +27,7 @@ function Fibonacci2 (num: number): number {
 
 console.log( Fibonacci(10) ) // 55
 
-//SOLUTION 3
+//SOLUTION 3 USING LOOP
 function Fibonacci3(index: number): number {
   if (index < 0) {
     throw new Error("Index must be a non-negative integer.");
