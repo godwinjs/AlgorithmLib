@@ -6,4 +6,6 @@ function Factorial (num: number): number {
   return num * Factorial(num - 1)
 }
 
+const Factorial2 = (num: number): number => num < 2 ? 1 : num * Factorial(num - 1);
+
 console.log( Factorial(3) )
