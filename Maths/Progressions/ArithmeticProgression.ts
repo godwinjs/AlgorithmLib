@@ -10,7 +10,19 @@ function NonConstantAPTerm(n: number, differences: number[] ): number {
     return a + sumDifferences;
   }
   const differences = [2, 5, 3, 1, 11, 7, 6, 4]; // Differences
-  const N_th = 8; // Term to calculate
+  const n = 8; // Term to calculate
   
   const result = NonConstantAPTerm(N_th, differences);
-  console.log(`The ${N_th}th term is ${result}`);
+  console.log(`The ${n}th term is ${result}`);
+
+function NonConstantAllAPTerm(differences) {
+    const a = differences.shift()
+  const terms = [a]; // Start with the first term
+  for (let i = 0; i < differences.length; i++) {
+    terms.push(terms[terms.length - 1] + differences[i]); // Add the difference to the last term
+  }
+  return terms;
+}
+
+const allTerms = NonConstantAllAPTerm(differences);
+console.log("All terms:", allTerms);
