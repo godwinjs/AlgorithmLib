@@ -11,9 +11,9 @@ Subsequent Terms:
 Each term is derived by adding the corresponding value from the list of numbers to the previous term.
 For example:
 
-𝑎1 = 2
-a2 = a1 + 5 = 2+5 = 7
-a3 = a2 + 3 = 7+3 =10
+  𝑎1 = 2
+  a2 = a1 + 5 = 2+5 = 7
+  a3 = a2 + 3 = 7+3 =10
 and so on.
 General Formula:
 For a sequence like this, you can define the formula for the 𝑛n-th term as:
@@ -21,6 +21,6 @@ For a sequence like this, you can define the formula for the 𝑛n-th term as:
 
 Where:
 
-𝑎 a is the first term (in this case, 22),
-𝑑𝑖 is the 𝑖 i-th value from the given list of numbers ([5,3,1,11,7,6,4]),
-𝑛 n is the term number.
+  𝑎 a is the first term (in this case, 22),
+  𝑑𝑖 is the 𝑖 i-th value from the given list of numbers ([5,3,1,11,7,6,4]),
+  𝑛 n is the term number.
