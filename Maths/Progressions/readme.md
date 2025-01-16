@@ -1,1 +1,1 @@
-![Screenshot](https://github.com/godwinjs/AlgorithmLib/assets/formulas/non_constant_ap_formula.png)
+![AP_Formula](https://github.com/godwinjs/AlgorithmLib/assets/non_constant_ap_formula.png)
