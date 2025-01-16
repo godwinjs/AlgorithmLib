@@ -1,10 +1,10 @@
 function Power (base: num, exp: number): number {
 
-	if(exp <= 0){
+	if(exp <= 0){//base case
   	return 1
   }
 	
-  return base * Power(base, exp - 1)
+  return base * Power(base, exp - 1) // reducing the exponent on each call till you hit the base case, then you multiply the first base var by the results gotten when function is unwinding
 }
 
 console.log( Power(2, 3) ) // 8
