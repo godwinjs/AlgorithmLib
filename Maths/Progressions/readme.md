@@ -1,4 +1,4 @@
-# NonConstantAP( n: number, d: number[] ): number
+# CalculateNonConstantTerm(n: number, differences: number[] ): number
 The difference or ratio between consecutive terms is not constant. Instead, it appears to be a sequence where each term depends on the sum of the previous term and the corresponding value in another list (the provided numbers).
 
 To address this, you need to generalize the sequence based on how it is constructed. Here's an analysis:
