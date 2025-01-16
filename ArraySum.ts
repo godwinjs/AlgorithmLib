@@ -1,3 +1,4 @@
+// LINEAR SOLUTION
 function ArraySum (arr: number[] ): number {
 
 	if(arr.length <= 0){
