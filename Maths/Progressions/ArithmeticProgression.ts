@@ -1,6 +1,6 @@
 console.log('Arithmetic Progression for non-constant common difference')
 
-function calculateTerm(n, differences): number {
+function CalculateNonConstantTerm(n: number, differences: number[] ): number {
     const a = differences.shift(); // First term
 
     if (n === 1) {
