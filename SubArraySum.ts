@@ -1,4 +1,54 @@
-// O(n^2) Quadratic solution
+/////////////////FOR INCONSISTENT SETs NUMBERs//////////////////////
+function _MaxSubArraySum(arr: number[], size: number){
+    // vars for max combination
+    let currentSum = 0, maxSum = 0, maxCombination: number[] = []
+
+    //vars for lowest combination
+    let lowCombination = arr.slice(0, 3), lowSum = lowCombination.reduce((a,b) => a+b, 0)
+    
+    if(size > arr.length){
+        throw new Error('The size of the combination cannot be greater than the numbers provided')
+    }
+    
+    /*
+        function to give different inconsistent selections of numbers: gets the current and the remaining
+        items in the array as argument. the current being the fisrt item in the parent Array.
+        - the array is called recursively reducing the remaining items in the parent Array
+     */
+
+    function combination(current: number[], remaining: number[]){//recursive function
+
+        if(remaining.length === 0 ){ // base case
+
+            if(current.length === size){// case that calculates the combination when it reaches the right size
+                currentSum = current.reduce((total, next) => total+next,0)
+
+                if(currentSum > maxSum){// max sum
+                    maxSum = currentSum
+                    maxCombination = current
+                }
+
+                if(currentSum < lowSum){//low sum
+                    lowSum = currentSum
+                    lowCombination = current
+                }
+            }
+
+            return;
+        }
+
+        combination(current.concat(remaining[0]), remaining.slice(1))
+        combination(current, remaining.slice(1))
+    }
+
+    combination([], arr)
+    return{ maxCombination, maxSum, lowCombination, lowSum}
+}
+
+
+
+//////////////////FOR CONSISTENT SET OF NUMBERS/////////////////////
+// O(n^2) Quadratic solution 
 function MaxSubArrr(arr: number[], k: number): number {
     let maxSum = -Infinity;
 
@@ -72,3 +122,4 @@ function MaxSubArrrSlide2(arr: number[], k: number): number {
 }
 
 console.log('O(n) Linear Solution: ', MaxSubArrrSlide2(array, n) )
+
